@@ -1,5 +1,5 @@
 # 3dev-fullstack
-Learn Fullstack
+learn fullstack!
 
 ## how to use the repository
 ### 1. first you will need to install git and node
