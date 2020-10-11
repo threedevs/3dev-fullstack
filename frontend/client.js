@@ -3,7 +3,7 @@ window.onload = () => {
     fetch("http://localhost:3000", {
         method: "POST",
         headers: { 'Content-Type': 'application/json', },
-        body: JSON.stringify({ username: "kwlski", password: "supersafepw", password2: "supersafepw" })
+        body: JSON.stringify({ username: "testuser2", password: "supersafepw", password2: "supersafepw" })
     }).then(res => {
         console.log(res)
         return res.status === 200 ? res.json() : Promise.reject()
@@ -13,5 +13,5 @@ window.onload = () => {
         console.error(err)
     }).finally(() => {
         console.log("done")
-    });
+    })
 }
