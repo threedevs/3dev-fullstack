@@ -2,7 +2,7 @@
 learn fullstack!
 
 ## contribute
-if you have spare time, you can always make an addition to system! If you have something different in mind than the listed additions below, just DM @kwlski on DC.
+If you have spare time, you can always make an addition to system! If you have something different in mind than the listed additions below, just DM @kwlski on DC.
 ### how to
 * implement one of the possible additions below
 * push your feature to a non protected branch
