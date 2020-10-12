@@ -12,7 +12,7 @@ if you have spare time, you can always make an addition to system!
 - document the possible API Routes for our library, consisting of users and books so far, use for this this ReadME file
 #### node
 - add proper validation for user creation (register)
-- add validation in a seperate middleware, maybe third party library?
+- add scalability for validation in a seperate middleware, maybe third party library? For example Express-Validator
 - add scalability for multiple routes and its CRUD and other operations
 - add a library/package that documents our code with our given comments on functions, f.e. JSDoc
 - add an API documentation generator f.e. something like Swagger
