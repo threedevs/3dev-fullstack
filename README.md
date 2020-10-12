@@ -9,7 +9,7 @@ if you have spare time, you can always make an addition to system!
 * open a pullrequest on github, that can be reviewed and merged into the "master" branch
 ### possible additions (topdown order)
 #### documentation
-- document the possible API Routes for our library, consisting of users and books so far, use for this this ReadME file
+- document the possible API Routes for our library, consisting of users and books so far, use this readme file
 #### node
 - add proper validation for user creation (register)
 - add scalability for validation in a seperate middleware, maybe third party library? For example Express-Validator
