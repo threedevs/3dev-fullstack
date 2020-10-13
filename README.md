@@ -1,12 +1,18 @@
 # 3dev-fullstack
-learn fullstack!
-
+learn fullstack! (MERN Stack)
+## prerequisites for the current system
+- install mongodb on your system
+- install mongo compass on your system
+- connect with mongodb compass to your local mongodb server, you might need to start it first!
+- add database with name "library" to your local mongodb server
+- add collection with name "books" to your "library" database
+- add collection with name "users" to your "library" database
 ## contribute
-If you have spare time, you can always make an addition to system! If you have something different in mind than the listed additions below, just DM @kwlski on DC.
+If you have spare time, you can always make an addition to the system! If you have something different in mind than the listed additions below, just DM @kwlski on DC.
 ### how to
-* implement one of the possible additions below
-* push your feature to a non protected branch
-* open a pullrequest on github, that can be reviewed and merged into the "master" branch
+- implement one of the possible additions below
+- push your feature to a non protected branch
+- open a pullrequest on github, that can be reviewed and merged into the "master" branch
 ### possible additions (topdown order)
 #### documentation
 - add a description for setting up the project as it is now, make a summary/guide of what we have done so far. See [Issue #1](https://github.com/threedevs/3dev-fullstack/issues/1)
