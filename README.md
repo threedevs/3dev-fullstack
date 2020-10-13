@@ -13,6 +13,7 @@ If you have spare time, you can always make an addition to the system! If you ha
 #### documentation
 - add a description for setting up the project as it is now, make a summary/guide of what we have done so far. See [Issue #1](https://github.com/threedevs/3dev-fullstack/issues/1)
 - document the possible API Routes for our library, consisting of users and books so far, use this readme file
+- make a prototype with a free tool, for example draw.io, figma or justinmind, try to immitate plex, but with books!
 #### frontend
 ##### beginner
 - add a "theme.md" file, where you describe the maintheme as well as its colors, define a primary color, secondary color and background color, follow https://material.io/design/color/the-color-system.html#color-theme-creation , take the plex picture as an example and its buttons if you are unsure
