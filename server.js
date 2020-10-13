@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 1337
 const bodyParser = require('body-parser')
 
 require('dotenv').config()
