@@ -22,12 +22,12 @@ If you have spare time, you can always make an addition to the system! If you ha
 - add sytling to the "login.html", you can do whatever you like, as long as its in line with "theme.md"
 - add a new html file "layout.html" as a boilerplate for our layout of all pages, you can implement it as a standalone html file for now that can be merged for layouting, have a horizontal header bar, a main section, and a vertical left side menu bar, does not need to be responsive, you can take the plex picture as example
 - add styling to "layout.html", you can do whatever you like, as long as its in line with "theme.md"
-- add a "books.html" that contains "pseudo books", it should contain a list of books with a cover, the goal is it to be like the "Main Section 1" on the picture
+- add a "books.html" that contains  3 "pseudo books", it should contain a list of books with a cover, the goal is it to be like the "Main Section 1" on the picture, does not need to be responsive
 - add sytling to the "books.html",  it needs to be in line with "theme.md"
 ##### intermediate
 - take one of the created pages from the beginner part and make it responsive, should work on every device, do not use bootstrap
 - add clientside/javascript validation to the "login.html", set the password requirements yourself, document them accordingly in the readme
-- perform a login towards the server with fetch(), try to figure out what url will be used, if not given any yet just make up a url, get in contact with one of the backend devs or create a route yourself!
+- perform a login towards the server with fetch(), try to figure out what url will be used, if not given any yet just make up a url, get in contact with one of the backend devs or create a route yourself if you feel like it!
 - take an existing page and link it to the layout, so that its reachable through navigation
 ##### advanced
 - add a "create react app" boilerplate, use the frontend folder as root, so that we can later merge our html pages into our react application
