@@ -20,43 +20,8 @@ app.all('*', (req, res, next) => {
 app.use(bodyParser.json({ limit: '50mb' }))
 app.use(bodyParser.urlencoded({ extended: true }))
 
-
-app.get('/', (req, res) => {
-    console.log("GET")
-    res.send('Hello World!')
-})
-
-app.post('/', async (req, res) => {
-    try {
-        console.log("POST")
-        console.log(req.body)
-        //validate every property from start to finish
-        //here we skipped password hashing and strength
-        //here we skipped username validation (is string length min max)
-        if (req.body.password !== req.body.password2) {
-            return res.sendStatus(401)
-        }
-        const newUser = new userDoc(req.body)
-        const userRes = await newUser.save()
-        if (!userRes) {
-            throw new Error("failed to make user")
-        }
-
-        return res.json(req.body)
-    } catch (e) {
-        console.error(e)
-        return res.sendStatus(500)
-    }
-})
-app.put('/', (req, res) => {
-    console.log("PUT")
-    res.send('Got a PUT request at /user')
-})
-
-app.delete('/', (req, res) => {
-    console.log("DELETE")
-    res.send('Got a DELETE request at /user')
-})
+app.use('/api/users', require('./routers/users'));
+app.use('/api/books', require('./routers/books'));
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
