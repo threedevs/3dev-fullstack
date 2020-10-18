@@ -11,7 +11,7 @@ If you have spare time, you can always make an addition to the system! If you ha
 - open a pullrequest on github, that can be reviewed and merged into the "master" branch
 ### possible additions (topdown order)
 #### documentation
-- add a description for setting up the project as it is now, make a summary/guide of what we have done so far. See [Issue #1](https://github.com/threedevs/3dev-fullstack/issues/1)
+- add a description for setting up the project as it is now, make a summary/guide of what we have done so far. See [Issue #1](https://github.com/threedevs/3dev-fullstack/issues/1) can be added to the wiki page on github if wanted
 - document the possible API Routes for our library, consisting of users and books so far, use this readme file
 #### frontend
 ##### beginner
