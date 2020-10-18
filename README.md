@@ -93,6 +93,10 @@ now we can try using our server, for this open the frontend folder and run index
 - add collection with name "books" to your "library" database
 - add collection with name "users" to your "library" database
 ## code documentation
+### Prototype
+```
+https://www.figma.com/file/XIUfEV7DlJHJCxwN8BAz5U/Library?node-id=1%3A3
+```
 ### API routes
 ...
 ### technology stack
