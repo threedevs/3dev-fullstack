@@ -11,12 +11,12 @@ If you have spare time, you can always make an addition to the system! If you ha
 - open a pullrequest on github, that can be reviewed and merged into the "master" branch
 ### possible additions (topdown order)
 #### documentation
-- add a description for setting up the project as it is now, make a summary/guide of what we have done so far. See [Issue #1](https://github.com/threedevs/3dev-fullstack/issues/1)
+- add a description for setting up the project as it is now, make a summary/guide of what we have done so far. See [Issue #1](https://github.com/threedevs/3dev-fullstack/issues/1) can be added to the wiki page on github if wanted
 - document the possible API Routes for our library, consisting of users and books so far, use this readme file
 #### frontend
 ##### beginner
-- make a prototype with a free tool, for example draw.io, figma or justinmind, try to immitate plex, but with books!
-- add a "theme.md" file, where you describe the maintheme as well as its colors, define a primary color, secondary color and background color, follow https://material.io/design/color/the-color-system.html#color-theme-creation , take the plex picture as an example and its buttons if you are unsure
+- **[in work, see [Issue #2](https://github.com/threedevs/3dev-fullstack/issues/2)]** make a prototype with a free tool, for example draw.io, figma or justinmind, try to immitate plex, but with books!
+- See [Issue #3](https://github.com/threedevs/3dev-fullstack/issues/3), add a "theme.md" file, where you describe the maintheme as well as its colors, define a primary color, secondary color and background color, follow https://material.io/design/color/the-color-system.html#color-theme-creation , take the plex picture as an example and its buttons if you are unsure
 - add a new html file "about.html" and add a description of what the goal is of this repository as well as who has/will/want contribute to it, the html does not need to be accessible yet, just a seperate file, you can add as many things as you like, as long as its about us, does not need to be responsive
 - add styling to the "about.html", you can do whatever you like, as long as its in line with "theme.md"
 - add a new html file "login.html" add 2 inputs and a login button, does not need to be responsive
@@ -93,6 +93,10 @@ now we can try using our server, for this open the frontend folder and run index
 - add collection with name "books" to your "library" database
 - add collection with name "users" to your "library" database
 ## code documentation
+### Prototype
+```
+https://www.figma.com/file/XIUfEV7DlJHJCxwN8BAz5U/Library?node-id=1%3A3
+```
 ### API routes
 ...
 ### technology stack
