@@ -12,7 +12,7 @@ If you have spare time, you can always make an addition to the system! If you ha
 ### possible additions (topdown order)
 #### documentation
 - add a description for setting up the project as it is now, make a summary/guide of what we have done so far. See [Issue #1](https://github.com/threedevs/3dev-fullstack/issues/1) can be added to the wiki page on github if wanted
-- document the possible API Routes for our library, consisting of users and books so far, use this readme file
+- ~~document the possible API Routes for our library, consisting of users and books so far, use this readme file~~ implemented by @kayla100devs
 #### frontend
 ##### beginner
 - **[in work, see [Issue #2](https://github.com/threedevs/3dev-fullstack/issues/2)]** make a prototype with a free tool, for example draw.io, figma or justinmind, try to immitate plex, but with books!
