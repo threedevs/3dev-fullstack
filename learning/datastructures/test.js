@@ -1,7 +1,6 @@
 import data from "./data.js"
 import functions from "./datastructures.js"
 import expected from "./expected.js";
-//import { isEmpty, isEqual, xorWith } from 'lodash'
 
 window.addEventListener("load", () => {
     const logEl = document.getElementById("log")
@@ -38,13 +37,10 @@ window.addEventListener("load", () => {
     }
 
     function compare(result, expected) {
-
         if (result == undefined) {
             console.error("undefined!")
             return false
         }
-        //check everything
-        //console.log(_.isEqual(result, expected))
         return _.isEqual(result, expected)
     }
 });
