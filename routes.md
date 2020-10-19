@@ -1,3 +1,12 @@
 - get all books,                GET,            /api/books
 - get one book by id,           GET,            /api/books/:id
 - search multiple by title,     GET,            /api/books/s/:search
+- create a new book,            POST,           /api/books
+- delete a book,                DELETE,         /api/books/:id
+- updates a book,               PATCH,          /api/books/:id
+
+- get user by id,               GET,            /api/users/:id
+- create a new user,            POST,           /api/auth/register
+- user login,                   POST,           /api/auth/login
+- deletes a user,                DELETE,         /api/profile/:id
+- updates a user,               PATCH,          /api/profile/:id
