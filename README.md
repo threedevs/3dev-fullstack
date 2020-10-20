@@ -16,7 +16,7 @@ If you have spare time, you can always make an addition to the system! If you ha
 #### frontend
 ##### beginner
 - **[in work, see [Issue #2](https://github.com/threedevs/3dev-fullstack/issues/2)]** make a prototype with a free tool, for example draw.io, figma or justinmind, try to immitate plex, but with books!
-- See [Issue #3](https://github.com/threedevs/3dev-fullstack/issues/3), add a "theme.md" file, where you describe the maintheme as well as its colors, define a primary color, secondary color and background color, follow https://material.io/design/color/the-color-system.html#color-theme-creation , take the plex picture as an example and its buttons if you are unsure
+- ~~See [Issue #3](https://github.com/threedevs/3dev-fullstack/issues/3), add a "theme.md" file, where you describe the maintheme as well as its colors, define a primary color, secondary color and background color, follow https://material.io/design/color/the-color-system.html#color-theme-creation , take the plex picture as an example and its buttons if you are unsure~~ implemented
 - add a new html file "about.html" and add a description of what the goal is of this repository as well as who has/will/want contribute to it, the html does not need to be accessible yet, just a seperate file, you can add as many things as you like, as long as its about us, does not need to be responsive
 - add styling to the "about.html", you can do whatever you like, as long as its in line with "theme.md"
 - add a new html file "login.html" add 2 inputs and a login button, does not need to be responsive
@@ -31,12 +31,12 @@ If you have spare time, you can always make an addition to the system! If you ha
 - perform a login towards the server with fetch(), try to figure out what url will be used, if not given any yet just make up a url, get in contact with one of the backend devs or create a route yourself if you feel like it!
 - take an existing page and link it to the layout, so that its reachable through navigation
 ##### advanced
-- add a "create react app" boilerplate, use the frontend folder as root, so that we can later merge our html pages into our react application
+- ~~add a "create react app" boilerplate, use the frontend folder as root, so that we can later merge our html pages into our react application~~ implemented
 - use the login form "login.html" that hits our register route with fetch, make the clientside work as well as the serverside
 - ...more to come
 #### node
 ##### beginner
-- make a "routes.md" file, define what requests hit which resources with what methods, for the resources "books" and "users"
+- ~~make a "routes.md" file, define what requests hit which resources with what methods, for the resources "books" and "users"~~ implemented
 - think of the system as a whole, be creative, what could be added to the library in terms of functionality? We only have books and users for now... Add a file that describes what the addition does and what is needed for it.
 - start commenting the server.js code and what it does, so people understand what we are doing
 - start commenting the existing routes in JSDoc style, explain what they do
