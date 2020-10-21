@@ -1,0 +1,67 @@
+@import "../fonts/fontWeight";
+
+.Navigation {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 5em);
+  transform: translate(-100%, 0);
+  transition: all .3s ease;
+  background: var(--nav-color);
+
+  @supports (backdrop-filter: blur(15px)) {
+    background: none;
+    backdrop-filter: blur(15px);
+  }
+
+  &__list {
+    flex-grow: 1;
+    margin: 0;
+    padding: 2em;
+    list-style-type: none;
+
+    > li::before {
+      display: block;
+      height: 0;
+
+      content: '\200B';
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    min-height: 2em;
+    padding-left: 2.5em;
+
+    &:not(:first-of-type) {
+      margin-top: 1.5em;
+    }
+  }
+
+  &__link {
+    color: currentColor;
+    font: $regular 1.5em/1.2 'Raleway', sans-serif;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: var(--primary-color);
+    }
+  }
+
+  &__section {
+    display: flex;
+    align-items: center;
+    min-height: 2em;
+    padding: 1.5em 0 1.5em 4.5em;
+    border-top: currentColor 1px solid;
+  }
+
+  &--open {
+    transform: translate(0, 0);
+  }
+}

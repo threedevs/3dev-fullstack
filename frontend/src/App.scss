@@ -1,7 +1,8 @@
 @import "~normalize.css";
 @import "fonts/fontWeight";
+@import "fonts/font-face";
 
-@media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
@@ -23,6 +24,12 @@
   background: var(--content-color);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -42,7 +49,4 @@ button {
 
 main {
   flex-grow: 1;
-  width: 100%;
-  max-width: 120em;
-  margin: 0 auto;
 }
