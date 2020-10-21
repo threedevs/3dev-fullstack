@@ -1,3 +1,4 @@
+/** create a new user */
 app.post('/', async (req, res) => {
     try {
         console.log("POST")
