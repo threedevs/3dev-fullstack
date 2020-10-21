@@ -14,6 +14,7 @@
 :root {
   --primary-color: #5BA788;
   --nav-color: #323031;
+  --nav-color-rgb: 50,48,49;
   --content-color: #3D3B3C;
   --error-color: #3D3B3C;
   --text-color: #FFFFFF;
@@ -49,4 +50,5 @@ button {
 
 main {
   flex-grow: 1;
+  padding: 2em;
 }

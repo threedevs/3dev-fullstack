@@ -13,7 +13,7 @@
   background: var(--nav-color);
 
   @supports (backdrop-filter: blur(15px)) {
-    background: none;
+    background: rgba(var(--nav-color-rgb), .25);
     backdrop-filter: blur(15px);
   }
 
