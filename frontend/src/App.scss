@@ -1,0 +1,48 @@
+@import "~normalize.css";
+@import "fonts/fontWeight";
+
+@media (prefers-reduced-motion: no-preference) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation-duration: 0s !important;
+  }
+}
+
+:root {
+  --primary-color: #5BA788;
+  --nav-color: #323031;
+  --content-color: #3D3B3C;
+  --error-color: #3D3B3C;
+  --text-color: #FFFFFF;
+
+  color: var(--text-color);
+  font: $regular 1em/1.4 Raleway, sans-serif;
+  scroll-behavior: smooth;
+  background: var(--content-color);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+svg,
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+main {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 120em;
+  margin: 0 auto;
+}
