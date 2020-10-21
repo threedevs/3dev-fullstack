@@ -28,14 +28,6 @@ userSchema.pre('save', function (next) {
   next();
 });
 
-userSchema.set('toJSON', {
-  transform: (document, returnedObject) => {
-    returnedObject.id = returnedObject._id.toString();
-    delete returnedObject._id;
-    delete returnedObject.password;
-  },
-});
-
 const userDoc = mongoose.model('user', userSchema);
 
 const bookSchema = mongoose.Schema(schemas.book);

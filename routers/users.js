@@ -33,6 +33,8 @@ userRouter.post(
         throw new Error('failed to make user');
       }
 
+      userRes.password = undefined;
+
       return res.json(userRes);
     } catch (e) {
       console.error(e);
