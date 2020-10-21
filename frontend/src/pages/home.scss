@@ -1,0 +1,66 @@
+@import "../fonts/fontWeight";
+
+.PageTitle {
+  margin: 0 0 1.25em;
+  font: $regular 2.25em/1.5 'Quicksand', sans-serif;
+}
+
+.Section {
+  &:not(:last-of-type) {
+    margin-bottom: 4em;
+  }
+
+  &__title {
+    margin: 0 0 1.25em;
+    font: $regular 1.5em/1.5 'Quicksand', sans-serif;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(5, 14em);
+    grid-gap: 2.5em;
+    width: calc(100% + 2em);
+    margin: 0;
+    padding: 0 0 1em;
+    overflow: auto;
+    list-style-type: none;
+
+    > li::before {
+      display: block;
+      height: 0;
+
+      content: '\200B';
+    }
+  }
+}
+
+.BookCard {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font: $regular 1em/1.5 'Raleway', sans-serif;
+  }
+
+  &__media {
+    order: -1;
+    width: 100%;
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-gap: .5em 1em;
+    align-items: baseline;
+    margin: 0;
+  }
+
+  dt {
+    font: $regular .75em/1.5 'Quicksand', sans-serif;
+  }
+
+  dd {
+    margin: 0;
+    font: $regular .875em/1.5 'Quicksand', sans-serif;
+  }
+}
