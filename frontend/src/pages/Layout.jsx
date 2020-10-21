@@ -6,11 +6,11 @@ import Home from "./Home";
 export default function Layout() {
     return (
         <>
-            <Header/>
+            <Header />
             <main>
-                <Home/>
+                <Home />
             </main>
-            <Footer/>
+            <Footer />
         </>
     )
 }

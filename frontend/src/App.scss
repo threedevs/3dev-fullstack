@@ -1,54 +1,54 @@
-@import "~normalize.css";
-@import "fonts/fontWeight";
-@import "fonts/font-face";
+@import '~normalize.css';
+@import 'fonts/fontWeight';
+@import 'fonts/font-face';
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-    animation-duration: 0s !important;
-  }
+	*,
+	*::before,
+	*::after {
+		transition: none !important;
+		animation-duration: 0s !important;
+	}
 }
 
 :root {
-  --primary-color: #5BA788;
-  --nav-color: #323031;
-  --nav-color-rgb: 50,48,49;
-  --content-color: #3D3B3C;
-  --error-color: #3D3B3C;
-  --text-color: #FFFFFF;
+	--primary-color: #5ba788;
+	--nav-color: #323031;
+	--nav-color-rgb: 50, 48, 49;
+	--content-color: #3d3b3c;
+	--error-color: #3d3b3c;
+	--text-color: #ffffff;
 
-  color: var(--text-color);
-  font: $regular 1em/1.4 Raleway, sans-serif;
-  scroll-behavior: smooth;
-  background: var(--content-color);
+	color: var(--text-color);
+	font: $regular 1em/1.4 Raleway, sans-serif;
+	scroll-behavior: smooth;
+	background: var(--content-color);
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 svg,
 img,
 picture {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
 
 button {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 main {
-  flex-grow: 1;
-  padding: 2em;
+	flex-grow: 1;
+	padding: 2em;
 }

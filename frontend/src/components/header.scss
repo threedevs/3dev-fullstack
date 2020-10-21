@@ -1,104 +1,103 @@
-@import "../fonts/fontWeight";
+@import '../fonts/fontWeight';
 
 .Header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  height: 5em;
-  padding: 1em;
-  background: var(--nav-color);
+	position: sticky;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	height: 5em;
+	padding: 1em;
+	background: var(--nav-color);
 
-  &__title {
-    margin: 0;
-    font: $light 2em/1 "Quicksand", sans-serif;
-  }
+	&__title {
+		margin: 0;
+		font: $light 2em/1 'Quicksand', sans-serif;
+	}
 
-  &__link {
-    display: flex;
-    align-items: center;
-    color: var(--primary-color);
-    text-decoration: none;
+	&__link {
+		display: flex;
+		align-items: center;
+		color: var(--primary-color);
+		text-decoration: none;
 
-    svg {
-      width: 1.2em;
-      height: 1.2em;
-      margin-right: .5em;
-    }
-  }
+		svg {
+			width: 1.2em;
+			height: 1.2em;
+			margin-right: 0.5em;
+		}
+	}
 
-  &__navBtn {
-    box-sizing: content-box;
-    position: fixed;
-    top: 1.2em;
-    right: 1.5em;
-    z-index: 110;
-    width: 2.25em;
-    height: 1.25em;
-    margin: 0;
-    padding: .5em;
+	&__navBtn {
+		box-sizing: content-box;
+		position: fixed;
+		top: 1.2em;
+		right: 1.5em;
+		z-index: 110;
+		width: 2.25em;
+		height: 1.25em;
+		margin: 0;
+		padding: 0.5em;
 
-    color: currentColor;
-    background: none;
-    border: none;
-    outline: none;
-    overflow: hidden;
+		color: currentColor;
+		background: none;
+		border: none;
+		outline: none;
+		overflow: hidden;
 
-    &:hover,
-    &:focus {
-      color: var(--primary-color);
-    }
+		&:hover,
+		&:focus {
+			color: var(--primary-color);
+		}
 
-    span:first-of-type {
-      position: absolute;
-      clip: rect(0 0 0 0);
-    }
+		span:first-of-type {
+			position: absolute;
+			clip: rect(0 0 0 0);
+		}
 
-    &Line {
-      $buttonDiv: &;
+		&Line {
+			$buttonDiv: &;
 
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1.5em;
-      height: 3px;
-      background: currentColor;
-      transition: all .3s ease;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 1.5em;
+			height: 3px;
+			background: currentColor;
+			transition: all 0.3s ease;
 
-      &--1 {
-        top: .5em;
-      }
+			&--1 {
+				top: 0.5em;
+			}
 
-      &--2 {
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
+			&--2 {
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
 
-      &--3 {
-        bottom: .5em;
-      }
-    }
+			&--3 {
+				bottom: 0.5em;
+			}
+		}
 
-    &--toggled {
-      color: currentColor;
+		&--toggled {
+			color: currentColor;
 
-      .Header__navBtnLine {
+			.Header__navBtnLine {
+				&--1 {
+					top: 50%;
+					transform: translate(-50%) rotateZ(-45deg);
+				}
 
-        &--1 {
-          top: 50%;
-          transform: translate(-50%) rotateZ(-45deg);
-        }
+				&--2 {
+					transform: translate(-50%) rotateZ(45deg);
+				}
 
-        &--2 {
-          transform: translate(-50%) rotateZ(45deg);
-        }
-
-        &--3 {
-          bottom: 0;
-          opacity: 0;
-        }
-      }
-    }
-  }
+				&--3 {
+					bottom: 0;
+					opacity: 0;
+				}
+			}
+		}
+	}
 }

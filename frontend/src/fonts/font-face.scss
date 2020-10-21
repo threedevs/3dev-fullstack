@@ -1,25 +1,25 @@
 @import 'fontWeight';
 
 @font-face {
-  font-family: 'Quicksand';
-  src: url('Quicksand.woff2') format('woff2');
-  font-style: normal;
-  font-weight: $thin $black;
-  font-display: swap;
+	font-family: 'Quicksand';
+	src: url('Quicksand.woff2') format('woff2');
+	font-style: normal;
+	font-weight: $thin $black;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: $thin $black;
-  src: url('Raleway.woff2') format('woff2');
-  font-display: swap;
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: $thin $black;
+	src: url('Raleway.woff2') format('woff2');
+	font-display: swap;
 }
 
 @font-face {
-  font-family: 'Raleway Italic';
-  font-style: italic;
-  font-weight: $thin $black;
-  src: url('Raleway-Italic.woff2') format('woff2');
-  font-display: swap;
+	font-family: 'Raleway Italic';
+	font-style: italic;
+	font-weight: $thin $black;
+	src: url('Raleway-Italic.woff2') format('woff2');
+	font-display: swap;
 }
