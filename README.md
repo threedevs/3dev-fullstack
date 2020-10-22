@@ -96,5 +96,8 @@ https://www.figma.com/file/XIUfEV7DlJHJCxwN8BAz5U/Library?node-id=1%3A3
 ...
 
 ### API Docs
-
--   To generate use this command ./node_modules/.bin/apidoc -i routers -o out/. Note if you chose to name the output directory other than "out" please include that in the ".gitignore" file.
+-   to generate API docs we use APIDocs:
+```
+ ./node_modules/.bin/apidoc -i routers -o out/.
+```
+-   note: if you chose to name the output directory other than "out" please include this in the ".gitignore" file
