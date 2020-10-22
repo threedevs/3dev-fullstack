@@ -6,7 +6,7 @@ const { userDoc } = require('../db/mongoose');
 /**
  * @api {post} /api/users Create a New User.
  * @apiName PostUser
- * @apiGroup User
+ * @apiGroup Users
  * @apiVersion 0.1.0
  *
  * @apiSuccess {object} user Newly Created User information.

@@ -3,7 +3,7 @@ const bookRouter = require('express').Router();
 /**
  * @api {get} /api/books Fetch all the available books.
  * @apiName GetBook
- * @apiGroup Book
+ * @apiGroup Books
  * @apiVersion 0.1.0
  *
  * @apiSuccess {object[]} books List of all books.
@@ -33,7 +33,7 @@ bookRouter.get('/', (req, res) => {
 /**
  * @api {get} /api/books/:id Fetch a Single Book by its Id.
  * @apiName GetBook
- * @apiGroup Book
+ * @apiGroup Books
  * @apiVersion 0.1.0
  *
  *@apiParam {String} id Id of the Book being fetched.
@@ -70,7 +70,7 @@ bookRouter.get('/s/:search', (req, res) => {
 /**
  * @api {put} /api/books/:id Update a Single Book by its Id.
  * @apiName PutBook
- * @apiGroup Book
+ * @apiGroup Books
  * @apiVersion 0.1.0
  *
  *@apiParam {String} id Id of the Book being fetched.
@@ -100,7 +100,7 @@ bookRouter.put('/', (req, res) => {
 /**
  * @api {delete} /api/books/:id Delete a Single Book by its Id.
  * @apiName DeleteBook
- * @apiGroup Book
+ * @apiGroup Books
  * @apiVersion 0.1.0
  *
  *@apiParam {String} id Id of the Book being fetched.
