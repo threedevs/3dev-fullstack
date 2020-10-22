@@ -1,34 +1,22 @@
-/** Express router providing user related routes
- * @module routers/users
- * @requires express
- */
-
-/**
- * express module
- * @const
- */
-const express = require('express');
-
-/**
- * Express router to mount user related functions on.
- * @type {object}
- * @const
- * @namespace userRouter
- */
-const userRouter = express.Router();
+const userRouter = require('express').Router();
 const { body, validationResult } = require('express-validator');
 
 const { userDoc } = require('../db/mongoose');
 
 /**
- * Route for Creating a new User.
- * @name post/api/users
- * @function
- * @memberof module:routers/users~usersRouter
- * @inner
- * @param {string} path - Express path
- * @param {object} validation - Express Validator Options
- * @param {callback} middelware - Express middleware
+ * @api {post} /api/users Create a New User.
+ * @apiName PostUser
+ * @apiGroup User
+ * @apiVersion 0.1.0
+ *
+ * @apiSuccess {object} user Newly Created User information.
+ * @apiSuccess {String} username User's username
+ *
+ * @apiSuccessExample {json} Success-Response:
+ * 		HTTP/1.1 200 OK
+ * 		{
+ * 			"username": "John Doe"
+ * 		}
  */
 userRouter.post(
 	'/',
