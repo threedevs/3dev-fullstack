@@ -19,6 +19,8 @@
     "mongoose-unique-validator": "^2.0.3"
   },
   "devDependencies": {
+    "apidoc": "^0.25.0",
+    "jsdoc": "^3.6.6",
     "nodemon": "^2.0.6"
   }
 }

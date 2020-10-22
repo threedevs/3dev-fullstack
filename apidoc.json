@@ -1,0 +1,7 @@
+{
+	"name": "3dev-fullstack",
+	"version": "0.1.0",
+	"description": "A practice full stack application for 3devs",
+	"title": "Custom apiDoc browser title",
+	"url": "https://localhost:1337"
+}

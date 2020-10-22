@@ -3,7 +3,21 @@ const { body, validationResult } = require('express-validator');
 
 const { userDoc } = require('../db/mongoose');
 
-/** create a new user */
+/**
+ * @api {post} /api/users Create a New User.
+ * @apiName PostUser
+ * @apiGroup User
+ * @apiVersion 0.1.0
+ *
+ * @apiSuccess {object} user Newly Created User information.
+ * @apiSuccess {String} username User's username
+ *
+ * @apiSuccessExample {json} Success-Response:
+ * 		HTTP/1.1 200 OK
+ * 		{
+ * 			"username": "John Doe"
+ * 		}
+ */
 userRouter.post(
 	'/',
 	[
