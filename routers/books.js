@@ -1,8 +1,4 @@
 const bookRouter = require('express').Router();
-const { param, validationResult } = require('express-validator');
-
-const { bookDoc } = require('../db/mongoose');
-
 const { bookDoc } = require('../db/mongoose');
 const { param, body, validationResult } = require('express-validator');
 
@@ -42,7 +38,7 @@ bookRouter.get('/', (req, res) => {
  * @apiGroup Books
  * @apiVersion 0.1.0
  *
- *@apiParam {String} id Id of the Book being fetched.
+ * @apiParam {String} id Id of the Book being fetched.
  *
  * @apiSuccess {object} book A single Book.
  * @apiSuccess {String} title Title of the book.
@@ -79,7 +75,7 @@ bookRouter.get('/s/:search', (req, res) => {
  * @apiGroup Books
  * @apiVersion 0.1.0
  *
- *@apiParam {String} id Id of the Book being updated.
+ * @apiParam {String} id Id of the Book being updated.
  *
  * @apiSuccess {object} book A single Book.
  * @apiSuccess {String} title Title of the book.
@@ -109,7 +105,7 @@ bookRouter.put('/', (req, res) => {
  * @apiGroup Books
  * @apiVersion 0.1.0
  *
- *@apiParam {String} id Id of the Book being deleted.
+ * @apiParam {String} id Id of the Book being deleted.
  *
  * @apiSuccessExample {json} Success-Response:
  * 		HTTP/1.1 200 OK
