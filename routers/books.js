@@ -117,10 +117,52 @@ bookRouter.get('/s/:search', (req, res) => {
  * 			"dateAdded": "22-05-2019"
  * 		}
  */
-bookRouter.put('/', (req, res) => {
-	console.log('PUT');
-	res.send('Got a PUT request at /user');
-});
+bookRouter.put(
+	'/:id',
+	[
+		param('id').isMongoId(),
+		body('title').isString(),
+		body('author').isString(),
+		body('genre').isString(),
+		body('yearPublished').isString(),
+		body().custom((body) => (Object.keys(body).length < 5 ? Promise.resolve() : Promise.reject())),
+	],
+	async (req, res) => {
+		try {
+			const errors = validationResult(req);
+
+			if (!errors.isEmpty()) {
+				return res.status(400).json({ errors: errors.array() });
+			}
+
+			const book = await bookDoc.findById(req.params.id);
+
+			if (!book) {
+				throw new Error('Can not find book by that id');
+			}
+
+			const body = req.body;
+
+			const newBook = {
+				title: body.title,
+				author: body.author,
+				genre: body.genre,
+				yearPublished: body.yearPublished,
+			};
+
+			const updatedBook = await bookDoc.findByIdAndUpdate(req.params.id, newBook, { new: true, runValidators: true });
+
+			if (!updatedBook) {
+				throw new Error('Unable to update the book');
+			}
+
+			return res.json(updatedBook);
+		} catch (e) {
+			console.error(e);
+			return res.sendStatus(500);
+		}
+	}
+);
 
 /**
  * @api {delete} /api/books/:id Delete a Single Book by its Id.
