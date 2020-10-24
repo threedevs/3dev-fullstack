@@ -27,9 +27,17 @@ const { param, body, validationResult } = require('express-validator');
  * 			}
  * 		]
  */
-bookRouter.get('/', (req, res) => {
-	console.log('GET');
-	res.send('Hello World!');
+bookRouter.get('/', async (req, res) => {
+	try {
+		const books = await bookDoc.find({});
+		if (!books) {
+			throw new Error('No books were found');
+		}
+		return res.json(books);
+	} catch (e) {
+		console.error(e);
+		return res.sendStatus(500);
+	}
 });
 
 /**
