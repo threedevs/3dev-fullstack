@@ -1,4 +1,7 @@
 const bookRouter = require('express').Router();
+const { param, validationResult } = require('express-validator');
+
+const { bookDoc } = require('../db/mongoose');
 
 const { bookDoc } = require('../db/mongoose');
 const { param, body, validationResult } = require('express-validator');
@@ -14,7 +17,7 @@ const { param, body, validationResult } = require('express-validator');
  * @apiSuccess {String} author Author of the book.
  * @apiSuccess {String} genre Genre of the book.
  * @apiSuccess {String} yearPublished Publication Year.
- * @apiSuccess {Data} dateAdded Date at which the book was added
+ * @apiSuccess {Date} dateAdded Date at which the book was added
  *
  * @apiSuccessExample {json} Success-Response:
  * 		HTTP/1.1 200 OK
@@ -76,7 +79,7 @@ bookRouter.get('/s/:search', (req, res) => {
  * @apiGroup Books
  * @apiVersion 0.1.0
  *
- *@apiParam {String} id Id of the Book being fetched.
+ *@apiParam {String} id Id of the Book being updated.
  *
  * @apiSuccess {object} book A single Book.
  * @apiSuccess {String} title Title of the book.
@@ -106,14 +109,29 @@ bookRouter.put('/', (req, res) => {
  * @apiGroup Books
  * @apiVersion 0.1.0
  *
- *@apiParam {String} id Id of the Book being fetched.
+ *@apiParam {String} id Id of the Book being deleted.
  *
  * @apiSuccessExample {json} Success-Response:
- * 		HTTP/1.1 204 OK
+ * 		HTTP/1.1 200 OK
  */
-bookRouter.delete('/', (req, res) => {
-	console.log('DELETE');
-	res.send('Got a DELETE request at /user');
+bookRouter.delete('/:id', [param('id').isMongoId()], async (req, res) => {
+	try {
+		const errors = validationResult(req);
+		if (!errors.isEmpty()) {
+			return res.status(400).json({ errors: errors.array() });
+		}
+
+		const book = await bookDoc.findByIdAndRemove(req.params.id);
+
+		if (!book) {
+			return res.sendStatus(404);
+		}
+
+		res.sendStatus(200);
+	} catch (e) {
+		console.error(e);
+		return res.sendStatus(500);
+	}
 });
 
 /**
