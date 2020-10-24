@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navigation from './Navigation';
 import { ReactComponent as Logo } from '../library_logo.svg';
 import './header.scss';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
 	const [navOpen, setNavOpen] = useState(false);
@@ -9,10 +10,10 @@ export default function Header() {
 	return (
 		<header className="Header">
 			<h1 className="Header__title">
-				<a href="/" className="Header__link">
+				<Link to="/" className="Header__link">
 					<Logo />
 					Library
-				</a>
+				</Link>
 			</h1>
 
 			{/* TODO add search form */}
