@@ -2,10 +2,14 @@
 
 learn fullstack! (MERN Stack)
 
+## state
+![current](documentation/state.png 'Current State')
+
 ## goal of this repository (vision)
 
 create a plex-like book library, with multiple books and user authentication, with the addition of having anki cards and even more to come...
-![layout](documentation/Layout.png 'Title')
+![layout](documentation/Layout.png 'Layout/Vision')
+
 
 ## contribute
 
