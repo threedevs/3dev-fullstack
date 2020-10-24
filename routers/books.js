@@ -1,7 +1,4 @@
 const bookRouter = require('express').Router();
-const { param, validationResult } = require('express-validator');
-
-const { bookDoc } = require('../db/mongoose');
 
 const { bookDoc } = require('../db/mongoose');
 const { param, body, validationResult } = require('express-validator');
@@ -31,9 +28,14 @@ const { param, body, validationResult } = require('express-validator');
  * 			}
  * 		]
  */
-bookRouter.get('/', (req, res) => {
-	console.log('GET');
-	res.send('Hello World!');
+bookRouter.get('/', async (req, res) => {
+	try {
+		const books = await bookDoc.find({});
+		return res.json(books);
+	} catch (e) {
+		console.error(e);
+		return res.sendStatus(500);
+	}
 });
 
 /**
