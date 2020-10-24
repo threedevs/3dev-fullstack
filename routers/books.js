@@ -65,10 +65,25 @@ bookRouter.get('/', async (req, res) => {
  * 			"dateAdded": "22-05-2019"
  * 		}
  */
-bookRouter.get('/:id', (req, res) => {
-	console.log('GET');
-	//how to get id?
-	res.send('Hello World!');
+bookRouter.get('/:id', [param('id').isMongoId()], async (req, res) => {
+	try {
+		const errors = validationResult(req);
+
+		if (!errors.isEmpty()) {
+			return res.status(400).json({ errors: errors.array() });
+		}
+
+		const book = await bookDoc.findById(req.params.id);
+
+		if (!book) {
+			throw new Error(`Can not find a book by this id`);
+		}
+
+		return res.json(book);
+	} catch (e) {
+		console.error(e);
+		return res.sendStatus(500);
+	}
 });
 
 /** search multiple by title */
