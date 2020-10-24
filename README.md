@@ -2,7 +2,7 @@
 
 learn fullstack! (MERN Stack)
 
-## state
+## current state
 ![current](documentation/state.png 'Current State')
 
 ## goal of this repository (vision)
