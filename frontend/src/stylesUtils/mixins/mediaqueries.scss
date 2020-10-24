@@ -1,0 +1,37 @@
+@import '../sizes';
+
+@mixin mediaSm {
+	@media screen and (min-width: #{$sm}em) {
+		@content;
+	}
+}
+
+@mixin mediaMd {
+	@media screen and (min-width: #{$md}em) {
+		@content;
+	}
+}
+
+@mixin mediaXl {
+	@media screen and (min-width: #{$xl}em) {
+		@content;
+	}
+}
+
+@mixin mediaXxl {
+	@media screen and (min-width: #{$xxl}em) {
+		@content;
+	}
+}
+
+@mixin media1920 {
+	@media screen and (min-width: #{$media1920}em) {
+		@content;
+	}
+}
+
+@mixin navigationSwitch {
+	@media screen and (min-width: #{$navigationSwitch}em) {
+		@content;
+	}
+}
