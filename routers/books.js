@@ -1,5 +1,8 @@
 const bookRouter = require('express').Router();
 
+const { bookDoc } = require('../db/mongoose');
+const { param, body, validationResult } = require('express-validator');
+
 /**
  * @api {get} /api/books Fetch all the available books.
  * @apiName GetBook
@@ -80,7 +83,7 @@ bookRouter.get('/s/:search', (req, res) => {
  * @apiSuccess {String} author Author of the book.
  * @apiSuccess {String} genre Genre of the book.
  * @apiSuccess {String} yearPublished Publication Year.
- * @apiSuccess {Data} dateAdded Date at which the book was added
+ * @apiSuccess {Date} dateAdded Date at which the book was added.
  *
  * @apiSuccessExample {json} Success-Response:
  * 		HTTP/1.1 200 OK
@@ -113,4 +116,67 @@ bookRouter.delete('/', (req, res) => {
 	res.send('Got a DELETE request at /user');
 });
 
+/**
+ * @api {post} /api/books Create a New Book.
+ * @apiName PostBook
+ * @apiGroup Books
+ * @apiVersion 0.1.0
+ *
+ * @apiSuccess {object} book Newly created Book.
+ * @apiSuccess {String} title Title of the book.
+ * @apiSuccess {String} author Author of the book.
+ * @apiSuccess {String} genre Genre of the book.
+ * @apiSuccess {String} yearPublished Publication Year.
+ * @apiSuccess {Date} dateAdded Date at which the book was added.
+ *
+ * @apiSuccessExample {json} Success-Response:
+ * 		HTTP/1.1 200 OK
+ * 		{
+ * 			"title": "A very cool book",
+ * 			"author": "A very cool author",
+ * 			"genre": "Not so cool genre",
+ * 			"yearPublished": "2019",
+ * 			"dateAdded": "22-05-2019"
+ * 		}
+ */
+bookRouter.post(
+	'/',
+	[
+		body('title').isString(),
+		body('author').isString(),
+		body('genre').isString(),
+		body('yearPublished').isString(),
+		body().custom((body) => (Object.keys(body).length < 5 ? Promise.resolve() : Promise.reject())),
+	],
+	async (req, res) => {
+		try {
+			const errors = validationResult(req);
+
+			if (!errors.isEmpty()) {
+				return res.status(400).json({ errors: errors.array() });
+			}
+
+			const body = req.body;
+
+			const newBook = new bookDoc({
+				title: body.title,
+				author: body.author,
+				genre: body.genre,
+				yearPublished: body.yearPublished,
+				dateAdded: new Date(),
+			});
+
+			const bookRes = await newBook.save();
+
+			if (!bookRes) {
+				throw new Error('failed to make book');
+			}
+
+			return res.json(bookRes);
+		} catch (e) {
+			console.error(e);
+			res.sendStatus(500);
+		}
+	}
+);
 module.exports = bookRouter;
