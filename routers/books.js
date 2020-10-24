@@ -14,7 +14,7 @@ const { bookDoc } = require('../db/mongoose');
  * @apiSuccess {String} author Author of the book.
  * @apiSuccess {String} genre Genre of the book.
  * @apiSuccess {String} yearPublished Publication Year.
- * @apiSuccess {Data} dateAdded Date at which the book was added
+ * @apiSuccess {Date} dateAdded Date at which the book was added
  *
  * @apiSuccessExample {json} Success-Response:
  * 		HTTP/1.1 200 OK
