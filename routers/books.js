@@ -1,4 +1,7 @@
 const bookRouter = require('express').Router();
+const { param, validationResult } = require('express-validator');
+
+const { bookDoc } = require('../db/mongoose');
 
 /**
  * @api {get} /api/books Fetch all the available books.
@@ -73,7 +76,7 @@ bookRouter.get('/s/:search', (req, res) => {
  * @apiGroup Books
  * @apiVersion 0.1.0
  *
- *@apiParam {String} id Id of the Book being fetched.
+ *@apiParam {String} id Id of the Book being updated.
  *
  * @apiSuccess {object} book A single Book.
  * @apiSuccess {String} title Title of the book.
@@ -103,14 +106,29 @@ bookRouter.put('/', (req, res) => {
  * @apiGroup Books
  * @apiVersion 0.1.0
  *
- *@apiParam {String} id Id of the Book being fetched.
+ *@apiParam {String} id Id of the Book being deleted.
  *
  * @apiSuccessExample {json} Success-Response:
- * 		HTTP/1.1 204 OK
+ * 		HTTP/1.1 204 No Content
  */
-bookRouter.delete('/', (req, res) => {
-	console.log('DELETE');
-	res.send('Got a DELETE request at /user');
+bookRouter.delete('/:id', [param('id').exists()], async (req, res) => {
+	try {
+		const errors = validationResult(req);
+		if (!errors.isEmpty()) {
+			return res.status(400).json({ errors: errors.array() });
+		}
+
+		const book = await bookDoc.findByIdAndRemove(req.params.id);
+
+		if (!book) {
+			return res.sendStatus(404);
+		}
+
+		res.sendStatus(204);
+	} catch (e) {
+		console.error(e);
+		return res.sendStatus(500);
+	}
 });
 
 module.exports = bookRouter;
