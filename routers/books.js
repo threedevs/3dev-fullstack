@@ -31,6 +31,9 @@ const { param, body, validationResult } = require('express-validator');
 bookRouter.get('/', async (req, res) => {
 	try {
 		const books = await bookDoc.find({});
+		if (!books) {
+			return res.sendStatus(500);
+		}
 		return res.json(books);
 	} catch (e) {
 		console.error(e);
