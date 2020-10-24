@@ -1,0 +1,27 @@
+@import 'stack';
+@import '../fonts/fontWeight';
+
+%UserText {
+	display: flex;
+	flex-direction: column;
+
+	@extend %Stack;
+
+	h3 {
+		font: $bold 1.75em/1.2 'Raleway', sans-serif;
+	}
+
+	h4 {
+		font: $bold 1.3em/1.2 'Raleway', sans-serif;
+	}
+
+	p,
+	li {
+		font: $regular 1em/1.75 'Raleway', sans-serif;
+	}
+
+	a {
+		text-decoration: none;
+		color: currentColor;
+	}
+}
