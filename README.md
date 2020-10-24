@@ -10,14 +10,13 @@ learn fullstack! (MERN Stack)
 create a plex-like book library, with multiple books and user authentication, with the addition of having anki cards and even more to come...
 ![layout](documentation/Layout.png 'Layout/Vision')
 
-
 ## contribute
 
-If you have spare time, you can always make an addition to the system! If you have something different in mind than the listed additions below, just DM @kwlski on DC.
+If you have spare time, you can always make an addition to the system! If you have something different in mind, just DM @kwlski on DC. There is a list of issues to pick from.
 
 ### how to
 
--   implement one of the possible additions below, if you are a beginner I can help you getting your changes to github
+-   implement one of the possible issues, assign the issue to yourself, if you are a beginner I can help you getting your changes to github
 -   push your feature to a non protected branch, hereby we name the branch after the task it fulfills, in small letters. For example I make a documentation file for routes, so we are going to name the branch "routesdoc"
 -   open a pullrequest on github, that can be reviewed and merged into the "master" branch
 -   done! You have contributed!
