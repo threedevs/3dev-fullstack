@@ -109,9 +109,9 @@ bookRouter.put('/', (req, res) => {
  *@apiParam {String} id Id of the Book being deleted.
  *
  * @apiSuccessExample {json} Success-Response:
- * 		HTTP/1.1 204 No Content
+ * 		HTTP/1.1 200 OK
  */
-bookRouter.delete('/:id', [param('id').exists()], async (req, res) => {
+bookRouter.delete('/:id', [param('id').isMongoId()], async (req, res) => {
 	try {
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
@@ -124,7 +124,7 @@ bookRouter.delete('/:id', [param('id').exists()], async (req, res) => {
 			return res.sendStatus(404);
 		}
 
-		res.sendStatus(204);
+		res.sendStatus(200);
 	} catch (e) {
 		console.error(e);
 		return res.sendStatus(500);
