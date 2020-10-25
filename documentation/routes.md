@@ -4,6 +4,7 @@
 - create a new book,            POST,           /api/books
 - delete a book,                DELETE,         /api/books/:id
 - updates a book,               PATCH,          /api/books/:id
+- get all books of same genre,  GET,            /api/books/:genre
 
 - get user by id,               GET,            /api/users/:id
 - create a new user,            POST,           /api/auth/register

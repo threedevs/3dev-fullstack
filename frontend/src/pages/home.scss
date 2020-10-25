@@ -17,12 +17,12 @@
 
 	&__list {
 		display: grid;
-		grid-template-columns: repeat(5, 14em);
+		grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
 		grid-gap: 2.5em;
 		width: calc(100% + 2em);
 		margin: 0;
 		padding: 0 0 1em;
-		overflow: auto;
+		//overflow: auto;
 		list-style-type: none;
 
 		> li::before {
@@ -35,8 +35,10 @@
 }
 
 .BookCard {
+	position: relative;
 	display: flex;
 	flex-direction: column;
+	padding: 1em;
 
 	&__title {
 		font: $regular 1em/1.5 'Raleway', sans-serif;
@@ -44,7 +46,7 @@
 
 	&__media {
 		order: -1;
-		width: 100%;
+		margin: 0 auto;
 	}
 
 	dl {
@@ -62,5 +64,28 @@
 	dd {
 		margin: 0;
 		font: $regular 0.875em/1.5 'Quicksand', sans-serif;
+	}
+
+	a {
+		outline: none;
+		color: var(--primary-color);
+
+		&::before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border-radius: .25em;
+			content: '';
+			transition: all .3s ease;
+		}
+
+		&:hover,
+		&:focus {
+			&::before {
+				box-shadow: var(--primary-color) 0 0 .25em .25em;
+			}
+		}
 	}
 }
