@@ -67,7 +67,9 @@ https://www.figma.com/file/XIUfEV7DlJHJCxwN8BAz5U/Library?node-id=1%3A3
 ### API routes
 -   for this, please see routes.md in the documentation folder
 ### technology stack
-...
+- [nodejs](https://nodejs.org)
+- [mongoDB](https://www.mongodb.com/)
+- [react](https://reactjs.org/)
 ### API Docs
 -   to generate API documentation we use APIDocs:
 ```
