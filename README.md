@@ -1,5 +1,4 @@
-# 3dev-fullstack
-learn fullstack! (MERN Stack)
+# 3dev-fullstack, learn fullstack! (MERN Stack)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/threedevs/3dev-fullstack/blob/master/LICENSE)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![GitHub issues](https://img.shields.io/github/issues/threedevs/3dev-fullstack/task?color=green&label=tasks)](https://GitHub.com/threedevs/3dev-fullstack/issues)
