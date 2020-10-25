@@ -94,7 +94,7 @@ https://www.figma.com/file/XIUfEV7DlJHJCxwN8BAz5U/Library?node-id=1%3A3
 ### API routes
 -   for this, please see routes.md in the documentation folder
 ### API Docs
-- generate api documentation to the "out folder"
+- generate api documentation to the "out" folder
 ```
 npm run apidoc
 ```
