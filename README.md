@@ -7,7 +7,7 @@ learn fullstack! (MERN Stack)
 [![GitHub pull-requests closed](https://img.shields.io/github/issues-pr-closed/threedevs/3dev-fullstack)](https://GitHub.com/threedevs/3dev-fullstack/pull/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 ![GitHub last commit](https://img.shields.io/github/last-commit/threedevs/3dev-fullstack)
-##technology stack
+## technology stack
 ![npm](https://github.com/aleen42/badges/raw/master/src/npm.svg)
 ![node](https://github.com/aleen42/badges/raw/master/src/node.svg)
 ![npm](https://github.com/aleen42/badges/raw/master/src/react.svg)
