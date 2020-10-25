@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+    docker-mongo-local-replicaset:
+        ports:
+            - '27001:27001'
+            - '27002:27002'
+            - '27003:27003'
+        container_name: mongo
+        volumes:
+            - ./data/mongodb:/data
+        environment:
+            - REPLICA_SET_NAME=mongo-rs
+        restart: always
+        image: flqw/docker-mongo-local-replicaset

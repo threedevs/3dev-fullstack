@@ -121,10 +121,10 @@ bookRouter.put(
 	'/:id',
 	[
 		param('id').isMongoId(),
-		body('title').isString(),
-		body('author').isString(),
-		body('genre').isString(),
-		body('yearPublished').isString(),
+		body('title').isString({ min: 1, max: 100 }),
+		body('author').isString({ min: 1, max: 100 }),
+		body('genre').isString({ min: 1, max: 100 }),
+		body('yearPublished').isString({ min: 4, max: 4 }),
 		body().custom((body) => (Object.keys(body).length < 5 ? Promise.resolve() : Promise.reject())),
 	],
 	async (req, res) => {
@@ -221,10 +221,10 @@ bookRouter.delete('/:id', [param('id').isMongoId()], async (req, res) => {
 bookRouter.post(
 	'/',
 	[
-		body('title').isString(),
-		body('author').isString(),
-		body('genre').isString(),
-		body('yearPublished').isString(),
+		body('title').isString({ min: 1, max: 100 }),
+		body('author').isString({ min: 1, max: 100 }),
+		body('genre').isString({ min: 1, max: 100 }),
+		body('yearPublished').isString({ min: 5, max: 5 }),
 		body().custom((body) => (Object.keys(body).length < 5 ? Promise.resolve() : Promise.reject())),
 	],
 	async (req, res) => {

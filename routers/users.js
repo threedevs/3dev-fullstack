@@ -21,9 +21,9 @@ const { userDoc } = require('../db/mongoose');
 userRouter.post(
 	'/',
 	[
-		body('username').isString().isLength({ min: 5 }),
-		body('password').isString().isLength({ min: 6 }),
-		body().custom((body) => (Object.keys(body).length < 4 ? Promise.resolve() : Promise.reject())),
+		body('username').isString().isLength({ min: 5, max: 100 }),
+		body('password').isString().isLength({ min: 6, max: 100 }),
+		body().custom((body) => (Object.keys(body).length < 3 ? Promise.resolve() : Promise.reject())),
 	],
 	async (req, res) => {
 		try {
