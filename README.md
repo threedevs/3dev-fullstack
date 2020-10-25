@@ -1,15 +1,20 @@
 # 3dev-fullstack
+learn fullstack! (MERN Stack)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/threedevs/3dev-fullstack/blob/master/LICENSE)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![GitHub issues](https://img.shields.io/github/issues/threedevs/3dev-fullstack/task?color=green&label=tasks)](https://GitHub.com/threedevs/3dev-fullstack/issues)
 [![GitHub closed issues by-label](https://img.shields.io/github/issues-closed/threedevs/3dev-fullstack/task?label=tasks)](https://GitHub.com/threedevs/3dev-fullstack/issues?q=is%3Aissue+is%3Aclosed)
 [![GitHub pull-requests closed](https://img.shields.io/github/issues-pr-closed/threedevs/3dev-fullstack)](https://GitHub.com/threedevs/3dev-fullstack/pull/)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/threedevs/3dev-fullstack)](https://GitHub.com/threedevs/3dev-fullstack/pull/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 ![GitHub last commit](https://img.shields.io/github/last-commit/threedevs/3dev-fullstack)
+##technology stack
+![npm](https://github.com/aleen42/badges/raw/master/src/npm.svg)
+![node](https://github.com/aleen42/badges/raw/master/src/node.svg)
+![npm](https://github.com/aleen42/badges/raw/master/src/react.svg)
+![node](https://github.com/aleen42/badges/raw/master/src/docker.svg)
+![node](https://github.com/aleen42/badges/raw/master/src/webpack.svg)
+![node](https://github.com/aleen42/badges/raw/master/src/github.svg)
 
-
-learn fullstack! (MERN Stack)
 ## current state
 ![current](documentation/state.png 'Current State')
 ## goal of this repository (vision)
