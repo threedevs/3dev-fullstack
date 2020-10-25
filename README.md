@@ -69,7 +69,7 @@ https://www.figma.com/file/XIUfEV7DlJHJCxwN8BAz5U/Library?node-id=1%3A3
 ### technology stack
 - [nodejs](https://nodejs.org)
 - [mongoDB](https://www.mongodb.com/)
-- [react](https://reactjs.org/)
+- [React](https://reactjs.org/)
 ### API Docs
 -   to generate API documentation we use APIDocs:
 ```
