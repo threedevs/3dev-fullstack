@@ -1,6 +1,6 @@
 # 3dev-fullstack
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/threedevs/3dev-fullstack/releases)
-[![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/releases/)
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/threedevs/3dev-fullstack/blob/master/license)
+[![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)](https://GitHub.com/threedevs/3dev-fullstack/releases/)
 
 learn fullstack! (MERN Stack)
 ## current state
