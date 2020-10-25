@@ -96,6 +96,10 @@ https://www.figma.com/file/XIUfEV7DlJHJCxwN8BAz5U/Library?node-id=1%3A3
 - [mongoDB](https://www.mongodb.com/)
 - [React](https://reactjs.org/)
 ### API Docs
+- generate api documentation to the "out folder"
+```
+npm run apidoc
+```
 -   to generate API documentation we use APIDocs:
 ```
  ./node_modules/.bin/apidoc -i routers -o out/

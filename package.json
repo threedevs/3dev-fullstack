@@ -12,7 +12,8 @@
     "frontend": "cd frontend && npm i && npm start && cd ..",
     "backend": "npm run mongo-up && nodemon server.js",
     "mongo-up": "cd mongo-replicaset && docker-compose up -d && cd ..",
-    "mongo-down": "cd mongo-replicaset && docker-compose down && cd .."
+    "mongo-down": "cd mongo-replicaset && docker-compose down && cd ..",
+    "apidoc": "./node_modules/.bin/apidoc -i routers -o out/"
   },
   "author": "",
   "license": "MIT",
