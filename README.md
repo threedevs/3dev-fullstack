@@ -1,4 +1,6 @@
 # 3dev-fullstack
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/threedevs/3dev-fullstack/blob/master/LICENSE)
+
 learn fullstack! (MERN Stack)
 ## current state
 ![current](documentation/state.png 'Current State')
