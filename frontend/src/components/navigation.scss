@@ -1,4 +1,5 @@
 @import '../fonts/fontWeight';
+@import '../stylesUtils/mixins/mediaqueries.scss';
 
 .Navigation {
 	position: absolute;
@@ -7,6 +8,7 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	max-width: var(--nav-width);
 	height: calc(100vh - 5em);
 	transform: translate(-100%, 0);
 	transition: all 0.3s ease;
@@ -15,6 +17,13 @@
 	@supports (backdrop-filter: blur(15px)) {
 		background: rgba(var(--nav-color-rgb), 0.25);
 		backdrop-filter: blur(15px);
+	}
+
+	@include navigationSwitch {
+		background: var(--nav-color);
+		backdrop-filter: none;
+		transform: none;
+		transition: all .3s ease;
 	}
 
 	&__list {

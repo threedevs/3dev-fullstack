@@ -21,7 +21,7 @@ export default function Navigation(props) {
 			</ul>
 			<div className="Navigation__section">
 				{/* TODO add user id */}
-				<NavItem route={`/profile/17`} name="Profile" />
+				<Link to={'/profile/17'} className="Navigation__link">Profile</Link>
 			</div>
 
 			{/* TODO add theme switch */}

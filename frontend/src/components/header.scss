@@ -1,9 +1,11 @@
 @import '../fonts/fontWeight';
+@import '../stylesUtils/mixins/mediaqueries';
 
 .Header {
 	position: sticky;
 	top: 0;
 	left: 0;
+	z-index: 100;
 	display: flex;
 	align-items: center;
 	height: 5em;
@@ -44,6 +46,10 @@
 		border: none;
 		outline: none;
 		overflow: hidden;
+
+		@include navigationSwitch {
+			display: none;
+		}
 
 		&:hover,
 		&:focus {

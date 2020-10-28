@@ -1,5 +1,6 @@
 .env
 .vscode
+.idea
 node_modules
 frontend/node_modules
 .DS_Store
