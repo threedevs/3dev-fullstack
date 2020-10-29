@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './home.scss';
-import { Link } from 'react-router-dom';
 
 import { allBooksURL } from '../SERVER';
 import BookCard from '../components/BookCard';

@@ -18,7 +18,7 @@ export default function Book() {
 			})
 			.then((data) => setBook(data))
 			.catch((err) => console.error(err));
-	}, []);
+	}, [id]);
 
 	return (
 		<>

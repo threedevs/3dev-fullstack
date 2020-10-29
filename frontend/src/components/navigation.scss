@@ -8,20 +8,27 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	max-width: var(--nav-width);
 	height: calc(100vh - 5em);
+	background: var(--nav-color);
 	transform: translate(-100%, 0);
 	transition: all 0.3s ease;
-	background: var(--nav-color);
 
 	@supports (backdrop-filter: blur(15px)) {
 		background: rgba(var(--nav-color-rgb), 0.25);
 		backdrop-filter: blur(15px);
+
+		@include navigationSwitch {
+			background: var(--nav-color);
+			backdrop-filter: none;
+		}
+	}
+
+
+	@include mediaSm {
+		max-width: var(--nav-width);
 	}
 
 	@include navigationSwitch {
-		background: var(--nav-color);
-		backdrop-filter: none;
 		transform: none;
 		transition: all .3s ease;
 	}
