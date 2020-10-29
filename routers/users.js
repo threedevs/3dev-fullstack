@@ -1,5 +1,5 @@
 const userRouter = require('express').Router();
-const { body, validationResult } = require('express-validator');
+const { param, body, validationResult } = require('express-validator');
 
 const { userDoc } = require('../db/mongoose');
 
@@ -36,9 +36,6 @@ userRouter.post(
 			//validate every property from start to finish
 			//here we skipped password hashing and strength
 			//here we skipped username validation (is string length min max)
-			if (req.body.password !== req.body.password2) {
-				return res.sendStatus(401);
-			}
 			const newUser = new userDoc(req.body);
 			const userRes = await newUser.save();
 			if (!userRes) {
@@ -54,5 +51,45 @@ userRouter.post(
 		}
 	}
 );
+
+/**
+ * @api {get} /api/users/:id Fetch a Single User by its Id.
+ * @apiName GetUser
+ * @apiGroup Users
+ * @apiVersion 0.1.0
+ *
+ * @apiParam {String} id Id of the User being fetched.
+ *
+ * @apiSuccess {object} user Fetched user's information.
+ * @apiSuccess {String} username User's username
+ *
+ * @apiSuccessExample {json} Success-Response:
+ * 		HTTP/1.1 200 OK
+ * 		{
+ * 			"username": "John Doe"
+ * 		}
+ */
+userRouter.get('/:id', [param('id').isMongoId()], async (req, res) => {
+	try {
+		const errors = validationResult(req);
+
+		if (!errors.isEmpty()) {
+			return res.status(400).json({ errors: errors.array() });
+		}
+
+		const user = await userDoc.findById(req.params.id);
+
+		if (!user) {
+			throw new Error(`Can not find a user by this id`);
+		}
+
+		user.password = undefined;
+
+		return res.json(user);
+	} catch (e) {
+		console.error(e);
+		return res.sendStatus(500);
+	}
+});
 
 module.exports = userRouter;
