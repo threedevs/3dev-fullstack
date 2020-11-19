@@ -1,0 +1,48 @@
+@import '../fonts/fontWeight.scss';
+
+.PageTitle {
+    margin: 0 0 1.25em ;
+    font: $regular 2.25em/1.5 'Quicksand', sans-serif;
+    text-transform: uppercase;
+}
+
+.Section {
+    padding: 2em;
+    text-align: center;
+}
+
+.Input {
+    background-color: #5BA788;
+    border: none;
+    color: white;
+    width: 20em;
+    height: 2em;
+    border-radius: 2em;
+}
+
+.Label {
+    margin: 0.5em;
+    //padding-left: 0.5em;
+    padding: 0 0 10em 0em;
+    font-style: 'Quicksand', sans-serif;
+    font-size: larger;
+    text-transform: uppercase;
+}
+
+.PasswordLink {
+    color: white;
+    font-style: 'Quicksand', sans-serif;
+}
+.Button {
+    border: none;
+    color: white;
+    padding: 0.5em ;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0 2em;
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 0.2em;
+    background-color: #5BA788; 
+}

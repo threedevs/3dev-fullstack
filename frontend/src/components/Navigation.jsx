@@ -18,6 +18,7 @@ export default function Navigation(props) {
 			<ul className="Navigation__list">
 				<NavItem route="/" name="Home" />
 				<NavItem route="/about" name="About" />
+				<NavItem route="/login" name="Login" />
 			</ul>
 			<div className="Navigation__section">
 				{/* TODO add user id */}
