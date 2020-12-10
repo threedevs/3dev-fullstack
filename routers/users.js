@@ -69,6 +69,7 @@ userRouter.post(
  * 			"username": "John Doe"
  * 		}
  */
+
 userRouter.get('/:id', [param('id').isMongoId()], async (req, res) => {
 	try {
 		const errors = validationResult(req);
@@ -91,5 +92,37 @@ userRouter.get('/:id', [param('id').isMongoId()], async (req, res) => {
 		return res.sendStatus(500);
 	}
 });
+
+/**
+ * @api {get} /api/users Fetch all the available users
+ * @apiName GetUser
+ * @apiGroup Users
+ * @apiVersion 0.1.0
+ *
+ * @apiSuccess {object[]} users List of all users
+ * @apiSuccess {String} username User's username
+ *
+ * @apiSuccessExample {json} Success-Response:
+ * 		HTTP/1.1 200 OK
+ * 		[
+ * 			{
+ * 				"username": "John Doe"
+ * 			}
+ * 		]
+ */
+
+userRouter.get('/', async (req, res) => {
+	try {
+		const users = await userDoc.find({});
+		if (!users) {
+			throw new Error('No users were found');
+		}
+		return res.json(users);
+	} catch (e) {
+		console.error(e);
+		return res.sendStatus(500);
+	}
+});
+
 
 module.exports = userRouter;
