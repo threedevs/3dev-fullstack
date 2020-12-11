@@ -94,23 +94,35 @@ userRouter.get('/:id', [param('id').isMongoId()], async (req, res) => {
 });
 
 /**
+ * @api {get} /api/users/s/:search Search for a user with the username
+ * @apiName SearchUser
+ * @apiGroup Users
+ * @apiVersion 0.1.0
+ *
+ * @apiSuccess {object} user Fetched user's information	
+ */
+userRouter.get('/s/:search',[param('search').isString({ min: 5, max: 100 })], async (req, res) => {
+	try {
+		const errors = validationResult(req);
+
+		if (!errors.isEmpty()) {
+			return res.status(400).json({ errors: errors.array() });
+		}
+
+		const users = await userDoc.find({username : req.params.search});
+
+		if (!users) {
+			throw new Error(`Can not find a user by this username`);
+		}
+
+/**
  * @api {get} /api/users Fetch all the available users
  * @apiName GetUser
  * @apiGroup Users
  * @apiVersion 0.1.0
  *
  * @apiSuccess {object[]} users List of all users
- * @apiSuccess {String} username User's username
- *
- * @apiSuccessExample {json} Success-Response:
- * 		HTTP/1.1 200 OK
- * 		[
- * 			{
- * 				"username": "John Doe"
- * 			}
- * 		]
  */
-
 userRouter.get('/', async (req, res) => {
 	try {
 		const users = await userDoc.find({});
@@ -123,6 +135,4 @@ userRouter.get('/', async (req, res) => {
 		return res.sendStatus(500);
 	}
 });
-
-
 module.exports = userRouter;
