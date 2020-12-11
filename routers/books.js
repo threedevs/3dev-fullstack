@@ -86,10 +86,51 @@ bookRouter.get('/:id', [param('id').isMongoId()], async (req, res) => {
 	}
 });
 
+/**
+ * @api {get} /api/books/s/:search Search all the books with the title.
+ * @apiName SearchBookByTitle
+ * @apiGroup Books
+ * @apiVersion 0.1.0
+ *
+ * @apiSuccess {object[]} books List of all books.
+ * @apiSuccess {String} title Title of the book.
+ * @apiSuccess {String} author Author of the book.
+ * @apiSuccess {String} genre Genre of the book.
+ * @apiSuccess {String} yearPublished Publication Year.
+ * @apiSuccess {Date} dateAdded Date at which the book was added
+ *
+ * @apiSuccessExample {json} Success-Response:
+ * 		HTTP/1.1 200 OK
+ * 		[
+ * 			{
+ * 				"title": "A very cool book",
+ * 				"author": "A very cool author",
+ * 				"genre": "Not so cool genre",
+ * 				"yearPublished": "2019",
+ * 				"dateAdded": "22-05-2019"
+ * 			}
+ * 		]
+ */
 /** search multiple by title */
-bookRouter.get('/s/:search', (req, res) => {
-	console.log('GET');
-	res.send('Hello World!');
+bookRouter.get('/s/:search',[param('search').isString({ min: 1, max: 100 })], async (req, res) => {
+	try {
+		const errors = validationResult(req);
+
+		if (!errors.isEmpty()) {
+			return res.status(400).json({ errors: errors.array() });
+		}
+
+		const books = await bookDoc.find({title : req.params.search});
+
+		if (!books) {
+			throw new Error(`Can not find a books by this search term`);
+		}
+
+		return res.json(books);
+	} catch (e) {
+		console.error(e);
+		return res.sendStatus(500);
+	}
 });
 
 /**

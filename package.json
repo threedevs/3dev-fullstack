@@ -7,7 +7,7 @@
     "node": "12.7.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test",
     "start": "node server.js",
     "frontend": "cd frontend && npm i && npm start && cd ..",
     "backend": "npm run mongo-up && nodemon server.js",
@@ -29,6 +29,9 @@
     "apidoc": "^0.25.0",
     "faker": "^5.1.0",
     "jsdoc": "^3.6.6",
-    "nodemon": "^2.0.6"
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.6",
+    "request": "^2.88.2",
+    "supertest": "^6.0.1"
   }
 }
