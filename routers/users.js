@@ -115,11 +115,11 @@ userRouter.get('/s/:search',[param('search').isString({ min: 5, max: 100 })], as
 			throw new Error(`Can not find a user by this username`);
 		}
 		return res.json(users);
- 	} catch (e) {
- 		console.error(e);
- 		return res.sendStatus(500);
- 	}
- });
+	} catch (e) {
+		console.error(e);
+		return res.sendStatus(500);
+	}
+});
 
 /**
  * @api {get} /api/users Fetch all the available users
@@ -141,4 +141,37 @@ userRouter.get('/', async (req, res) => {
 		return res.sendStatus(500);
 	}
 });
-module.exports = userRouter;
+
+/**
+ * @api {delete} /api/users/:id Delete a User by its Id
+ * @apiName DeleteUser
+ * @apiGroup Users
+ * @apiVersion 0.1.0
+ *
+ * @apiParam {String} id Id of the User being deleted.
+ *
+ * @apiSuccessExample {json} Success-Response:
+ * 		HTTP/1.1 200 OK
+ */
+userRouter.delete('/:id', [param('id').isMongoId()], async (req, res) => {
+	try {
+		const errors = validationResult(req);
+		if (!errors.isEmpty()) {
+			return res.status(400).json({ errors: errors.array() });
+		}
+
+		const user = await userDoc.findByIdAndRemove(req.params.id);
+
+		if (!user) {
+			return res.sendStatus(404);
+		}
+
+		res.sendStatus(200);
+	} catch (e) {
+		console.error(e);
+		return res.sendStatus(500);
+	}
+});
+
+
+module.exports = userRouter
