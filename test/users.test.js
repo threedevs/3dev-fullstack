@@ -18,3 +18,20 @@ describe('GET /api/users/:id', function () {
             });
     });
 });
+
+/**
+ * Testing get user by username
+ */
+describe('GET /api/users/s/:search', function () {
+    it('check with invalid user name', function (done) {
+        request(app)
+            .get('/api/users/s/:search')
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /json/)
+            .end(function(err, response) {
+                if (err) { return done(err); }
+                assert.strictEqual(response.status, 400);
+                done();
+            });
+    });
+});
